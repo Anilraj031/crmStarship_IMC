@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.Source" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.Source" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SourceDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Batches" nillable="true" type="tns:ArrayOfSourceBatch" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" type="tns:SourceDocumentType" />
+      <xs:element minOccurs="0" name="HeaderFields" nillable="true" type="tns:ArrayOfSourceField" />
+      <xs:element minOccurs="0" name="InnerOrders" nillable="true" type="tns:ArrayOfDocument" />
+      <xs:element minOccurs="0" name="LineItems" nillable="true" type="tns:ArrayOfSourceLineItem" />
+      <xs:element minOccurs="0" name="Loaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Packages" nillable="true" type="tns:ArrayOfSourcePackage" />
+      <xs:element minOccurs="0" name="Pallets" nillable="true" type="tns:ArrayOfSourcePallet" />
+      <xs:element minOccurs="0" name="SourceAttributes" nillable="true" type="tns:ArrayOfSourceField" />
+      <xs:element minOccurs="0" name="SourceID" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourceDocument" nillable="true" type="tns:SourceDocument" />
+  <xs:complexType name="ArrayOfSourceBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SourceBatch" nillable="true" type="tns:SourceBatch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSourceBatch" nillable="true" type="tns:ArrayOfSourceBatch" />
+  <xs:complexType name="SourceBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourceBatch" nillable="true" type="tns:SourceBatch" />
+  <xs:simpleType name="SourceDocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Order" />
+      <xs:enumeration value="Shipment" />
+      <xs:enumeration value="Customer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SourceDocumentType" nillable="true" type="tns:SourceDocumentType" />
+  <xs:complexType name="ArrayOfSourceField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SourceField" nillable="true" type="tns:SourceField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSourceField" nillable="true" type="tns:ArrayOfSourceField" />
+  <xs:complexType name="SourceField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourceField" nillable="true" type="tns:SourceField" />
+  <xs:complexType name="ArrayOfDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Document" nillable="true" type="tns:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocument" nillable="true" type="tns:ArrayOfDocument" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" type="tns:SourceDocumentType" />
+      <xs:element minOccurs="0" name="HeaderFields" nillable="true" type="tns:ArrayOfSourceField" />
+      <xs:element minOccurs="0" name="LineItems" nillable="true" type="tns:ArrayOfSourceLineItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Document" nillable="true" type="tns:Document" />
+  <xs:complexType name="ArrayOfSourceLineItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SourceLineItem" nillable="true" type="tns:SourceLineItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSourceLineItem" nillable="true" type="tns:ArrayOfSourceLineItem" />
+  <xs:complexType name="SourceLineItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Distributable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineItemFields" nillable="true" type="tns:ArrayOfSourceField" />
+      <xs:element minOccurs="0" name="LineItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MultiBin" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourceLineItem" nillable="true" type="tns:SourceLineItem" />
+  <xs:complexType name="ArrayOfSourcePackage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SourcePackage" nillable="true" type="tns:SourcePackage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSourcePackage" nillable="true" type="tns:ArrayOfSourcePackage" />
+  <xs:complexType name="SourcePackage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfPackageContent" />
+      <xs:element minOccurs="0" name="PackageFields" nillable="true" type="tns:ArrayOfSourceField" />
+      <xs:element minOccurs="0" name="PackageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourcePackage" nillable="true" type="tns:SourcePackage" />
+  <xs:complexType name="ArrayOfPackageContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PackageContent" nillable="true" type="tns:PackageContent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPackageContent" nillable="true" type="tns:ArrayOfPackageContent" />
+  <xs:complexType name="PackageContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContentFields" nillable="true" type="tns:ArrayOfSourceField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackageContent" nillable="true" type="tns:PackageContent" />
+  <xs:complexType name="ArrayOfSourcePallet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SourcePallet" nillable="true" type="tns:SourcePallet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSourcePallet" nillable="true" type="tns:ArrayOfSourcePallet" />
+  <xs:complexType name="SourcePallet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PalletFields" nillable="true" type="tns:ArrayOfSourceField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourcePallet" nillable="true" type="tns:SourcePallet" />
+</xs:schema>

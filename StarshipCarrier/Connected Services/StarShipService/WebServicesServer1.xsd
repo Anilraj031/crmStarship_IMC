@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.FreightRules" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.FreightRules" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model" />
+  <xs:complexType name="FreightRulesData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseFreightType" type="tns:BaseFreightType" />
+      <xs:element minOccurs="0" name="Calculations" nillable="true" type="tns:ArrayOfCalculation" />
+      <xs:element minOccurs="0" name="CustomRulesMode" type="tns:FreightRulesMode" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model" minOccurs="0" name="OrderDistributionType" type="q1:FreightPackageDistributionType" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model" minOccurs="0" name="PackageDistributionType" type="q2:FreightPackageDistributionType" />
+      <xs:element minOccurs="0" name="Rules" nillable="true" type="tns:ArrayOfFreightRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FreightRulesData" nillable="true" type="tns:FreightRulesData" />
+  <xs:simpleType name="BaseFreightType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ListFreight" />
+      <xs:enumeration value="CustomFreight" />
+      <xs:enumeration value="Zero" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BaseFreightType" nillable="true" type="tns:BaseFreightType" />
+  <xs:complexType name="ArrayOfCalculation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Calculation" nillable="true" type="tns:Calculation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalculation" nillable="true" type="tns:ArrayOfCalculation" />
+  <xs:complexType name="Calculation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CalculationID" type="xs:int" />
+      <xs:element minOccurs="0" name="CalculationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FSIHeading" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfChunk" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Calculation" nillable="true" type="tns:Calculation" />
+  <xs:complexType name="ArrayOfChunk">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chunk" nillable="true" type="tns:Chunk" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChunk" nillable="true" type="tns:ArrayOfChunk" />
+  <xs:complexType name="Chunk">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChunkType" type="tns:ChunkType" />
+      <xs:element minOccurs="0" name="OperandType" type="tns:OperandType" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Type" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chunk" nillable="true" type="tns:Chunk" />
+  <xs:simpleType name="ChunkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Operator" />
+      <xs:enumeration value="CloseParenthesis" />
+      <xs:enumeration value="OpenParenthesis" />
+      <xs:enumeration value="Floor" />
+      <xs:enumeration value="Ceiling" />
+      <xs:enumeration value="Round" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChunkType" nillable="true" type="tns:ChunkType" />
+  <xs:simpleType name="OperandType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Math" />
+      <xs:enumeration value="Field" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperandType" nillable="true" type="tns:OperandType" />
+  <xs:simpleType name="FreightRulesMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Never" />
+      <xs:enumeration value="Prepaid" />
+      <xs:enumeration value="Always" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FreightRulesMode" nillable="true" type="tns:FreightRulesMode" />
+  <xs:complexType name="ArrayOfFreightRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FreightRule" nillable="true" type="tns:FreightRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFreightRule" nillable="true" type="tns:ArrayOfFreightRule" />
+  <xs:complexType name="FreightRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConditionList" nillable="true" type="tns:FreightRuleConditionList" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FreightRuleLevel" type="tns:FreightRuleLevel" />
+      <xs:element minOccurs="0" name="MaxCalcID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxValue" type="xs:float" />
+      <xs:element minOccurs="0" name="MaxValueChecked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinCalcID" type="xs:int" />
+      <xs:element minOccurs="0" name="MinValue" type="xs:float" />
+      <xs:element minOccurs="0" name="MinValueChecked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifyAmount" type="xs:float" />
+      <xs:element minOccurs="0" name="ModifyCalcID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifyField" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifyFieldType" type="tns:FixedValueType" />
+      <xs:element minOccurs="0" name="ModifyTarget" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifyTargetType" type="tns:FreightFieldType" />
+      <xs:element minOccurs="0" name="RuleIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="RuleType" type="tns:FreightRulesType" />
+      <xs:element minOccurs="0" name="TerminalRule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UpdateBy" type="tns:FreightRuleUpdateBy" />
+      <xs:element minOccurs="0" name="UpdateUnit" type="tns:FreightRuleUpdateUnitType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FreightRule" nillable="true" type="tns:FreightRule" />
+  <xs:complexType name="FreightRuleConditionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllItemsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AsString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildConditions" nillable="true" type="tns:ArrayOfCondition" />
+      <xs:element minOccurs="0" name="ChildGroups" nillable="true" type="tns:ArrayOfFreightRuleConditionList" />
+      <xs:element minOccurs="0" name="GroupDetailType" type="tns:ConditionFieldDetailType" />
+      <xs:element minOccurs="0" name="GroupOperator" type="tns:RuleGroupOperator" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FreightRuleConditionList" nillable="true" type="tns:FreightRuleConditionList" />
+  <xs:complexType name="ArrayOfCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Condition" nillable="true" type="tns:Condition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCondition" nillable="true" type="tns:ArrayOfCondition" />
+  <xs:complexType name="Condition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CalculationOne" nillable="true" type="tns:Calculation" />
+      <xs:element minOccurs="0" name="CalculationTwo" nillable="true" type="tns:Calculation" />
+      <xs:element minOccurs="0" name="IsOperandOneEnum" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOperandTwoEnum" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OperandDetailType" type="tns:ConditionFieldDetailType" />
+      <xs:element minOccurs="0" name="OperandOne" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperandOneDocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperandOneFSIID" type="xs:int" />
+      <xs:element minOccurs="0" name="OperandOneNeedsDetail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OperandOneType" type="tns:ConditionFieldType" />
+      <xs:element minOccurs="0" name="OperandTwo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperandTwoDocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperandTwoFSIID" type="xs:int" />
+      <xs:element minOccurs="0" name="OperandTwoNeedsDetail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OperandTwoType" type="tns:ConditionFieldType" />
+      <xs:element minOccurs="0" name="Operator" type="tns:RuleOperator" />
+      <xs:element minOccurs="0" name="OperatorAsString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Condition" nillable="true" type="tns:Condition" />
+  <xs:simpleType name="ConditionFieldDetailType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="ANY" />
+      <xs:enumeration value="ALL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConditionFieldDetailType" nillable="true" type="tns:ConditionFieldDetailType" />
+  <xs:simpleType name="ConditionFieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="StarShipField" />
+      <xs:enumeration value="FSIField" />
+      <xs:enumeration value="Constant" />
+      <xs:enumeration value="Calculation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConditionFieldType" nillable="true" type="tns:ConditionFieldType" />
+  <xs:simpleType name="RuleOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="NotEquals" />
+      <xs:enumeration value="GreaterThan" />
+      <xs:enumeration value="GreaterThanEqualTo" />
+      <xs:enumeration value="LessThan" />
+      <xs:enumeration value="LessThanEqualTo" />
+      <xs:enumeration value="OneOf" />
+      <xs:enumeration value="NotOneOf" />
+      <xs:enumeration value="BeginsWith" />
+      <xs:enumeration value="EndsWith" />
+      <xs:enumeration value="Contains" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RuleOperator" nillable="true" type="tns:RuleOperator" />
+  <xs:complexType name="ArrayOfFreightRuleConditionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FreightRuleConditionList" nillable="true" type="tns:FreightRuleConditionList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFreightRuleConditionList" nillable="true" type="tns:ArrayOfFreightRuleConditionList" />
+  <xs:simpleType name="RuleGroupOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="And" />
+      <xs:enumeration value="Or" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RuleGroupOperator" nillable="true" type="tns:RuleGroupOperator" />
+  <xs:simpleType name="FreightRuleLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipment" />
+      <xs:enumeration value="Package" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FreightRuleLevel" nillable="true" type="tns:FreightRuleLevel" />
+  <xs:simpleType name="FixedValueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Constant" />
+      <xs:enumeration value="StarShipField" />
+      <xs:enumeration value="FSIField" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FixedValueType" nillable="true" type="tns:FixedValueType" />
+  <xs:simpleType name="FreightFieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PkgAppliedFreight" />
+      <xs:enumeration value="PkgOptionCharge" />
+      <xs:enumeration value="PkgHandlingFee" />
+      <xs:enumeration value="TotalPkgAppliedFreight" />
+      <xs:enumeration value="ShipmentAppliedFreight" />
+      <xs:enumeration value="ShipmentOptionCharge" />
+      <xs:enumeration value="ShipmentHandlingFee" />
+      <xs:enumeration value="TotalShipmentAppliedFreight" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FreightFieldType" nillable="true" type="tns:FreightFieldType" />
+  <xs:simpleType name="FreightRulesType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="MinMax" />
+      <xs:enumeration value="Increase" />
+      <xs:enumeration value="Decrease" />
+      <xs:enumeration value="FixedAmount" />
+      <xs:enumeration value="Calculation" />
+      <xs:enumeration value="DoNotWriteBack" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FreightRulesType" nillable="true" type="tns:FreightRulesType" />
+  <xs:simpleType name="FreightRuleUpdateBy">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ByShipment" />
+      <xs:enumeration value="ByOrder" />
+      <xs:enumeration value="ByPackage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FreightRuleUpdateBy" nillable="true" type="tns:FreightRuleUpdateBy" />
+  <xs:simpleType name="FreightRuleUpdateUnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DollarAmount" />
+      <xs:enumeration value="Percentage" />
+      <xs:enumeration value="Calculation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FreightRuleUpdateUnitType" nillable="true" type="tns:FreightRuleUpdateUnitType" />
+</xs:schema>

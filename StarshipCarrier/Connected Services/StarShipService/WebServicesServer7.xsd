@@ -1,0 +1,1690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfLocationOptionsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationOptionsType" type="tns:LocationOptionsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocationOptionsType" nillable="true" type="tns:ArrayOfLocationOptionsType" />
+  <xs:simpleType name="LocationOptionsType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NYGarmentDistrict" />
+      <xs:enumeration value="Airport" />
+      <xs:enumeration value="TradeShow" />
+      <xs:enumeration value="Fair" />
+      <xs:enumeration value="AmusementPark" />
+      <xs:enumeration value="Farm" />
+      <xs:enumeration value="CountryClub" />
+      <xs:enumeration value="Estate" />
+      <xs:enumeration value="Prison" />
+      <xs:enumeration value="Camp" />
+      <xs:enumeration value="DistributionCenter" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LocationOptionsType" nillable="true" type="tns:LocationOptionsType" />
+  <xs:simpleType name="LocationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Business" />
+      <xs:enumeration value="BusinessLoadingDock" />
+      <xs:enumeration value="Residence" />
+      <xs:enumeration value="Construction" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LocationType" nillable="true" type="tns:LocationType" />
+  <xs:simpleType name="AddressValidationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotValidated" />
+      <xs:enumeration value="Valid" />
+      <xs:enumeration value="Invalid" />
+      <xs:enumeration value="Corrected" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AddressValidationStatus" nillable="true" type="tns:AddressValidationStatus" />
+  <xs:simpleType name="TaxIdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SSN" />
+      <xs:enumeration value="EIN" />
+      <xs:enumeration value="DUNS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaxIdType" nillable="true" type="tns:TaxIdType" />
+  <xs:simpleType name="CarrierType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Freight" />
+      <xs:enumeration value="Parcel" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarrierType" nillable="true" type="tns:CarrierType" />
+  <xs:simpleType name="ShipViaScenarioStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="New" />
+      <xs:enumeration value="Processed" />
+      <xs:enumeration value="Applied" />
+      <xs:enumeration value="UserOverriden" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShipViaScenarioStatus" nillable="true" type="tns:ShipViaScenarioStatus" />
+  <xs:simpleType name="ServiceGroup">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ground" />
+      <xs:enumeration value="Express" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceGroup" nillable="true" type="tns:ServiceGroup" />
+  <xs:simpleType name="ServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LTL" />
+      <xs:enumeration value="TL" />
+      <xs:enumeration value="Ground" />
+      <xs:enumeration value="Air" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceType" nillable="true" type="tns:ServiceType" />
+  <xs:simpleType name="MessageTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Information">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Action">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">150</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Warning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">300</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">500</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Alert">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">700</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Debug">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MessageTypes" nillable="true" type="tns:MessageTypes" />
+  <xs:simpleType name="ResultCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Failure">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Success">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Indetermined">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResultCode" nillable="true" type="tns:ResultCode" />
+  <xs:complexType name="ArrayOfBillingType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BillingType" type="tns:BillingType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillingType" nillable="true" type="tns:ArrayOfBillingType" />
+  <xs:simpleType name="BillingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Prepaid" />
+      <xs:enumeration value="Recipient" />
+      <xs:enumeration value="ThirdParty" />
+      <xs:enumeration value="Consignee" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BillingType" nillable="true" type="tns:BillingType" />
+  <xs:complexType name="ArrayOfOptionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OptionType" type="tns:OptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOptionType" nillable="true" type="tns:ArrayOfOptionType" />
+  <xs:simpleType name="OptionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HandlingFee">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HazMat">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LiftGatePickup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LiftGateDelivery">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InsidePickup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InsideDelivery">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PalletUnloading">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Blind">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Tarp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PalletExchange">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Labeling">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Packaging">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LimitedAccessPickup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LimitedAccessDelivery">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Redelivery">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DockPickup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CertifiedPickup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SingleShipment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sorting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SaturdayDelivery">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SaturdayPickup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HoldAtLocation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeliveryConfirmation" />
+      <xs:enumeration value="VerbalConfirmation" />
+      <xs:enumeration value="Notifications" />
+      <xs:enumeration value="LargePackage" />
+      <xs:enumeration value="DryIce" />
+      <xs:enumeration value="HundredWeight" />
+      <xs:enumeration value="Return" />
+      <xs:enumeration value="Insurance" />
+      <xs:enumeration value="PaperlessInvoice" />
+      <xs:enumeration value="AdditionalHandling" />
+      <xs:enumeration value="ShipperRelease" />
+      <xs:enumeration value="ExchangeCollect" />
+      <xs:enumeration value="PriorityAlert" />
+      <xs:enumeration value="ScheduledDelivery" />
+      <xs:enumeration value="Signature" />
+      <xs:enumeration value="ProactiveResponse" />
+      <xs:enumeration value="Alcohol" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="HolidayPickup" />
+      <xs:enumeration value="HolidayDelivery" />
+      <xs:enumeration value="OverseasLeg" />
+      <xs:enumeration value="CallBeforeDelivery" />
+      <xs:enumeration value="CertifiedMail" />
+      <xs:enumeration value="Machinable" />
+      <xs:enumeration value="ReturnReceipt" />
+      <xs:enumeration value="SignatureWaiver" />
+      <xs:enumeration value="CostCenter" />
+      <xs:enumeration value="Indicia" />
+      <xs:enumeration value="Endorsement" />
+      <xs:enumeration value="Refrigiration" />
+      <xs:enumeration value="CarbonNeutral" />
+      <xs:enumeration value="ImportControl" />
+      <xs:enumeration value="CIRemoval" />
+      <xs:enumeration value="EDT" />
+      <xs:enumeration value="PaperlessCO" />
+      <xs:enumeration value="RestrictedArticles" />
+      <xs:enumeration value="TopLoad" />
+      <xs:enumeration value="NoFreezing" />
+      <xs:enumeration value="Food" />
+      <xs:enumeration value="NoBreakDown" />
+      <xs:enumeration value="FreightInsurance" />
+      <xs:enumeration value="WorldEase" />
+      <xs:enumeration value="RegisteredMail" />
+      <xs:enumeration value="WhiteGlove" />
+      <xs:enumeration value="PharmacyDelivery" />
+      <xs:enumeration value="FlatRate" />
+      <xs:enumeration value="Consolidation" />
+      <xs:enumeration value="AirConditioning" />
+      <xs:enumeration value="otCarrierPickup" />
+      <xs:enumeration value="otLiveAnimals" />
+      <xs:enumeration value="otDirectDeliveryOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OptionType" nillable="true" type="tns:OptionType" />
+  <xs:simpleType name="DataSource">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="U" />
+      <xs:enumeration value="R" />
+      <xs:enumeration value="T" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataSource" nillable="true" type="tns:DataSource" />
+  <xs:simpleType name="PartyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sender">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Recipient">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Broker">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Importer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ThirdParty">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PartyType" nillable="true" type="tns:PartyType" />
+  <xs:simpleType name="CILetterHeadType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotRequired" />
+      <xs:enumeration value="Required" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CILetterHeadType" nillable="true" type="tns:CILetterHeadType" />
+  <xs:simpleType name="TenderingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Call" />
+      <xs:enumeration value="DailyPickup" />
+      <xs:enumeration value="Electronic" />
+      <xs:enumeration value="NA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TenderingType" nillable="true" type="tns:TenderingType" />
+  <xs:simpleType name="ChargeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Freight" />
+      <xs:enumeration value="Surcharge" />
+      <xs:enumeration value="Discount" />
+      <xs:enumeration value="Option" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Information" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChargeType" nillable="true" type="tns:ChargeType" />
+  <xs:complexType name="ArrayOfInternationalBillingOptionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InternationalBillingOptionType" type="tns:InternationalBillingOptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInternationalBillingOptionType" nillable="true" type="tns:ArrayOfInternationalBillingOptionType" />
+  <xs:simpleType name="InternationalBillingOptionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Transportation" />
+      <xs:enumeration value="TransportationDuties" />
+      <xs:enumeration value="TransportationDutiesTaxes" />
+      <xs:enumeration value="TransportationExport" />
+      <xs:enumeration value="TransportationImport" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InternationalBillingOptionType" nillable="true" type="tns:InternationalBillingOptionType" />
+  <xs:simpleType name="SupportedOptionLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipment" />
+      <xs:enumeration value="Package" />
+      <xs:enumeration value="ShipmentPackage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SupportedOptionLevel" nillable="true" type="tns:SupportedOptionLevel" />
+  <xs:simpleType name="DimsUOMType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="inch" />
+      <xs:enumeration value="cm" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DimsUOMType" nillable="true" type="tns:DimsUOMType" />
+  <xs:simpleType name="PackagingLevelEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pallet" />
+      <xs:enumeration value="Pack">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PackagingLevelEnum" nillable="true" type="tns:PackagingLevelEnum" />
+  <xs:simpleType name="PackagingTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pallet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Skid">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Slip">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bag">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bale">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Box">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bunch">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Carpet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Coil">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Crate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cylinder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Drum">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pipe">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Roll">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Loose_Items">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Tube">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Envelope">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PackagingTypeEnum" nillable="true" type="tns:PackagingTypeEnum" />
+  <xs:simpleType name="WeightUOMType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LB" />
+      <xs:enumeration value="OZ" />
+      <xs:enumeration value="KG" />
+      <xs:enumeration value="G" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WeightUOMType" nillable="true" type="tns:WeightUOMType" />
+  <xs:simpleType name="SettingLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Global" />
+      <xs:enumeration value="Machine" />
+      <xs:enumeration value="User" />
+      <xs:enumeration value="UserMachine" />
+      <xs:enumeration value="Location" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SettingLevel" nillable="true" type="tns:SettingLevel" />
+  <xs:simpleType name="ShipViaScenarioRuleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SimpleSwitch" />
+      <xs:enumeration value="RateShop" />
+      <xs:enumeration value="DisableServices" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShipViaScenarioRuleType" nillable="true" type="tns:ShipViaScenarioRuleType" />
+  <xs:simpleType name="CustomImageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LetterHead" />
+      <xs:enumeration value="Signature" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomImageType" nillable="true" type="tns:CustomImageType" />
+  <xs:simpleType name="FieldTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ftString" />
+      <xs:enumeration value="ftBoolean" />
+      <xs:enumeration value="ftInteger" />
+      <xs:enumeration value="ftFloat" />
+      <xs:enumeration value="ftMoney" />
+      <xs:enumeration value="ftDateTime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FieldTypes" nillable="true" type="tns:FieldTypes" />
+  <xs:simpleType name="UserDefinableFieldTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="utOrder" />
+      <xs:enumeration value="utPallet" />
+      <xs:enumeration value="utPackage" />
+      <xs:enumeration value="utLineItem" />
+      <xs:enumeration value="utShipment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserDefinableFieldTypes" nillable="true" type="tns:UserDefinableFieldTypes" />
+  <xs:simpleType name="ServiceArea">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Both" />
+      <xs:enumeration value="Domestic" />
+      <xs:enumeration value="International" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceArea" nillable="true" type="tns:ServiceArea" />
+  <xs:simpleType name="NMFCClassEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="eNA" />
+      <xs:enumeration value="e50" />
+      <xs:enumeration value="e55" />
+      <xs:enumeration value="e60" />
+      <xs:enumeration value="e65" />
+      <xs:enumeration value="e70" />
+      <xs:enumeration value="e77p5" />
+      <xs:enumeration value="e85" />
+      <xs:enumeration value="e92p5" />
+      <xs:enumeration value="e100" />
+      <xs:enumeration value="e110" />
+      <xs:enumeration value="e125" />
+      <xs:enumeration value="e150" />
+      <xs:enumeration value="e175" />
+      <xs:enumeration value="e200" />
+      <xs:enumeration value="e250" />
+      <xs:enumeration value="e300" />
+      <xs:enumeration value="e400" />
+      <xs:enumeration value="e500" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NMFCClassEnum" nillable="true" type="tns:NMFCClassEnum" />
+  <xs:simpleType name="FieldLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipment" />
+      <xs:enumeration value="LineItem" />
+      <xs:enumeration value="Package" />
+      <xs:enumeration value="PackageContent" />
+      <xs:enumeration value="Pallet" />
+      <xs:enumeration value="Order" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FieldLevel" nillable="true" type="tns:FieldLevel" />
+  <xs:simpleType name="ShipmentFieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="tkInt">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tkEnum">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tkFloat">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tkString">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tkClass">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tkDateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShipmentFieldType" nillable="true" type="tns:ShipmentFieldType" />
+  <xs:simpleType name="TranslationMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ExactMatch" />
+      <xs:enumeration value="PatternMatch" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TranslationMode" nillable="true" type="tns:TranslationMode" />
+  <xs:simpleType name="CertificateOfOriginType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotRequired" />
+      <xs:enumeration value="Standard" />
+      <xs:enumeration value="NaftaOrStandard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CertificateOfOriginType" nillable="true" type="tns:CertificateOfOriginType" />
+  <xs:simpleType name="FreightPackageDistributionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Evenly" />
+      <xs:enumeration value="UseWeight" />
+      <xs:enumeration value="UseItemsValue" />
+      <xs:enumeration value="First" />
+      <xs:enumeration value="Last" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FreightPackageDistributionType" nillable="true" type="tns:FreightPackageDistributionType" />
+  <xs:simpleType name="eCommerceStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eCommerceStatusEnum" nillable="true" type="tns:eCommerceStatusEnum" />
+  <xs:simpleType name="eCommerceAPIStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Green" />
+      <xs:enumeration value="Yellow" />
+      <xs:enumeration value="Red" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eCommerceAPIStatus" nillable="true" type="tns:eCommerceAPIStatus" />
+  <xs:simpleType name="EODStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failure" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Abort" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EODStatusEnum" nillable="true" type="tns:EODStatusEnum" />
+  <xs:simpleType name="AuditLabelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="atHorizontal" />
+      <xs:enumeration value="atNotched" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuditLabelType" nillable="true" type="tns:AuditLabelType" />
+  <xs:simpleType name="LabelOrientation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="loNoAudit" />
+      <xs:enumeration value="loAuditFirst" />
+      <xs:enumeration value="loLabelFirst" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LabelOrientation" nillable="true" type="tns:LabelOrientation" />
+  <xs:simpleType name="LabelStockSize">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="lsFourByThree" />
+      <xs:enumeration value="lsFourBySix" />
+      <xs:enumeration value="lsFourBySixPointTwoFive" />
+      <xs:enumeration value="lsFourBySixPointSevenFive" />
+      <xs:enumeration value="lsFourBySeven" />
+      <xs:enumeration value="lsFourBySevenPointTwoFive" />
+      <xs:enumeration value="lsFourByEight" />
+      <xs:enumeration value="lsFourByEightPointTwoFive" />
+      <xs:enumeration value="lsFourByEleven" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LabelStockSize" nillable="true" type="tns:LabelStockSize" />
+  <xs:simpleType name="PrinterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Laser" />
+      <xs:enumeration value="EPL2" />
+      <xs:enumeration value="ZPL2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PrinterType" nillable="true" type="tns:PrinterType" />
+  <xs:simpleType name="CarrierDocType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Both" />
+      <xs:enumeration value="Parcel" />
+      <xs:enumeration value="Freight" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarrierDocType" nillable="true" type="tns:CarrierDocType" />
+  <xs:simpleType name="DocumentLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipment" />
+      <xs:enumeration value="Package" />
+      <xs:enumeration value="Pallet" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocumentLevel" nillable="true" type="tns:DocumentLevel" />
+  <xs:simpleType name="DocumentOrientation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Portrait" />
+      <xs:enumeration value="Landscape" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocumentOrientation" nillable="true" type="tns:DocumentOrientation" />
+  <xs:simpleType name="DocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BOL" />
+      <xs:enumeration value="Label" />
+      <xs:enumeration value="Report" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="ThermalLabel" />
+      <xs:enumeration value="ThermalReport" />
+      <xs:enumeration value="ThermalOther" />
+      <xs:enumeration value="SmartLabel" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocumentType" nillable="true" type="tns:DocumentType" />
+  <xs:simpleType name="PrintingOrientation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="poBottomFirst" />
+      <xs:enumeration value="poTopFirst" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PrintingOrientation" nillable="true" type="tns:PrintingOrientation" />
+  <xs:simpleType name="SnapshotType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FSI" />
+      <xs:enumeration value="Carrier" />
+      <xs:enumeration value="SourceDocument" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SnapshotType" nillable="true" type="tns:SnapshotType" />
+  <xs:simpleType name="SupportedRegulationSetEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Both" />
+      <xs:enumeration value="CFR" />
+      <xs:enumeration value="IATA" />
+      <xs:enumeration value="TDG" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SupportedRegulationSetEnum" nillable="true" type="tns:SupportedRegulationSetEnum" />
+  <xs:simpleType name="BulkTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSelected" />
+      <xs:enumeration value="Bulk" />
+      <xs:enumeration value="NonBulk" />
+      <xs:enumeration value="Exception" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BulkTypeEnum" nillable="true" type="tns:BulkTypeEnum" />
+  <xs:simpleType name="EmptyPackageTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Uncleaned" />
+      <xs:enumeration value="Residue" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EmptyPackageTypeEnum" nillable="true" type="tns:EmptyPackageTypeEnum" />
+  <xs:simpleType name="HazMatPackTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="hmOuter" />
+      <xs:enumeration value="hmInner" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HazMatPackTypeEnum" nillable="true" type="tns:HazMatPackTypeEnum" />
+  <xs:simpleType name="UOMTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Solid" />
+      <xs:enumeration value="Liquid" />
+      <xs:enumeration value="Radioactive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UOMTypeEnum" nillable="true" type="tns:UOMTypeEnum" />
+  <xs:simpleType name="FSILevelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipment" />
+      <xs:enumeration value="Header" />
+      <xs:enumeration value="LineItem" />
+      <xs:enumeration value="Package" />
+      <xs:enumeration value="PackageContents" />
+      <xs:enumeration value="HandlingUnit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FSILevelType" nillable="true" type="tns:FSILevelType" />
+  <xs:simpleType name="FSIDocType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="Order" />
+      <xs:enumeration value="Customer" />
+      <xs:enumeration value="Shipment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FSIDocType" nillable="true" type="tns:FSIDocType" />
+  <xs:simpleType name="ShipmentStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Open">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Booked">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InTransit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Delivered">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeliveryException">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Posted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShipmentStatusEnum" nillable="true" type="tns:ShipmentStatusEnum" />
+  <xs:simpleType name="WriteBackStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="NotSupported" />
+      <xs:enumeration value="Done" />
+      <xs:enumeration value="NotDone" />
+      <xs:enumeration value="Partial" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WriteBackStatus" nillable="true" type="tns:WriteBackStatus" />
+  <xs:simpleType name="BatchProcessingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PrintAndShip" />
+      <xs:enumeration value="Ship" />
+      <xs:enumeration value="Save" />
+      <xs:enumeration value="Delete" />
+      <xs:enumeration value="Print" />
+      <xs:enumeration value="ValidateAndSave" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BatchProcessingType" nillable="true" type="tns:BatchProcessingType" />
+  <xs:simpleType name="BatchDuplicateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CreateNew" />
+      <xs:enumeration value="Skip" />
+      <xs:enumeration value="Prompt" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BatchDuplicateType" nillable="true" type="tns:BatchDuplicateType" />
+  <xs:simpleType name="BatchValidationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Prompt" />
+      <xs:enumeration value="SaveAsDraft" />
+      <xs:enumeration value="Abort" />
+      <xs:enumeration value="SkipShipment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BatchValidationType" nillable="true" type="tns:BatchValidationType" />
+  <xs:simpleType name="DateFilterTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Today" />
+      <xs:enumeration value="Yesterday" />
+      <xs:enumeration value="PastWeek" />
+      <xs:enumeration value="PastMonth" />
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Range" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DateFilterTypes" nillable="true" type="tns:DateFilterTypes" />
+  <xs:simpleType name="ImportMappingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="InputColumn" />
+      <xs:enumeration value="FixedValue" />
+      <xs:enumeration value="AutoAssign" />
+      <xs:enumeration value="Concatenation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ImportMappingType" nillable="true" type="tns:ImportMappingType" />
+  <xs:simpleType name="ConcatenationSeparator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Space" />
+      <xs:enumeration value="Comma" />
+      <xs:enumeration value="Dash" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConcatenationSeparator" nillable="true" type="tns:ConcatenationSeparator" />
+  <xs:simpleType name="SelectionMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Current" />
+      <xs:enumeration value="FastestTime" />
+      <xs:enumeration value="FastestDays" />
+      <xs:enumeration value="CheapestList" />
+      <xs:enumeration value="CheapestCustom" />
+      <xs:enumeration value="Select" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SelectionMethod" nillable="true" type="tns:SelectionMethod" />
+  <xs:simpleType name="EEIType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="FTRExempt" />
+      <xs:enumeration value="License" />
+      <xs:enumeration value="ITAR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EEIType" nillable="true" type="tns:EEIType" />
+  <xs:simpleType name="ReferenceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipment" />
+      <xs:enumeration value="ShipmentSpecial" />
+      <xs:enumeration value="Package" />
+      <xs:enumeration value="PackageSpecial" />
+      <xs:enumeration value="ShipmentBarcoded" />
+      <xs:enumeration value="PackageBarcoded" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReferenceType" nillable="true" type="tns:ReferenceType" />
+  <xs:simpleType name="ASNShipmentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="asnPickPack" />
+      <xs:enumeration value="asnStandard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ASNShipmentType" nillable="true" type="tns:ASNShipmentType" />
+  <xs:simpleType name="BillDutiesTaxesType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sender" />
+      <xs:enumeration value="Recipient" />
+      <xs:enumeration value="ThirdParty" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BillDutiesTaxesType" nillable="true" type="tns:BillDutiesTaxesType" />
+  <xs:simpleType name="ConfirmedPackageStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipped" />
+      <xs:enumeration value="Reconciled" />
+      <xs:enumeration value="Void" />
+      <xs:enumeration value="Voided" />
+      <xs:enumeration value="CouldNotVoid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConfirmedPackageStatus" nillable="true" type="tns:ConfirmedPackageStatus" />
+  <xs:complexType name="ArrayOfWritebackType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WritebackType" type="tns:WritebackType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWritebackType" nillable="true" type="tns:ArrayOfWritebackType" />
+  <xs:simpleType name="WritebackType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Quantity" />
+      <xs:enumeration value="Freight" />
+      <xs:enumeration value="Notes" />
+      <xs:enumeration value="Packs" />
+      <xs:enumeration value="ExtensionQuantity" />
+      <xs:enumeration value="ExtensionFreight" />
+      <xs:enumeration value="ExtensionNotes" />
+      <xs:enumeration value="ExtensionPacks" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WritebackType" nillable="true" type="tns:WritebackType" />
+  <xs:simpleType name="UDFType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Int" />
+      <xs:enumeration value="Float" />
+      <xs:enumeration value="Bool" />
+      <xs:enumeration value="DateTime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UDFType" nillable="true" type="tns:UDFType" />
+  <xs:simpleType name="ShipmentOrderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SourceLive" />
+      <xs:enumeration value="SourceOld" />
+      <xs:enumeration value="NoSource" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShipmentOrderType" nillable="true" type="tns:ShipmentOrderType" />
+  <xs:simpleType name="eCommerceWBStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failure" />
+      <xs:enumeration value="PartialFailure" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eCommerceWBStatusEnum" nillable="true" type="tns:eCommerceWBStatusEnum" />
+  <xs:simpleType name="BOLItemGroupingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="ByClass" />
+      <xs:enumeration value="ByCode" />
+      <xs:enumeration value="ByItemNumber" />
+      <xs:enumeration value="ByGroup" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BOLItemGroupingType" nillable="true" type="tns:BOLItemGroupingType" />
+  <xs:simpleType name="BOLDescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="FirstItem" />
+      <xs:enumeration value="NMFC" />
+      <xs:enumeration value="NewGroup" />
+      <xs:enumeration value="Manual" />
+      <xs:enumeration value="GroupDescription" />
+      <xs:enumeration value="FirstItemPlus" />
+      <xs:enumeration value="PackageContent" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BOLDescriptionType" nillable="true" type="tns:BOLDescriptionType" />
+  <xs:simpleType name="ItemClassificationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="ByClass" />
+      <xs:enumeration value="ByCode" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ItemClassificationType" nillable="true" type="tns:ItemClassificationType" />
+  <xs:simpleType name="ManualBOLEntryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Never" />
+      <xs:enumeration value="Always" />
+      <xs:enumeration value="NoLineItems" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ManualBOLEntryType" nillable="true" type="tns:ManualBOLEntryType" />
+  <xs:simpleType name="PackagingNMFCType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ByContent" />
+      <xs:enumeration value="Manual" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PackagingNMFCType" nillable="true" type="tns:PackagingNMFCType" />
+  <xs:simpleType name="PalletWeightClassificationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="HighestClass" />
+      <xs:enumeration value="LowestClass" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PalletWeightClassificationType" nillable="true" type="tns:PalletWeightClassificationType" />
+  <xs:simpleType name="BOLType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Straight" />
+      <xs:enumeration value="VICS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BOLType" nillable="true" type="tns:BOLType" />
+  <xs:simpleType name="FOB">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Origin" />
+      <xs:enumeration value="Destination" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FOB" nillable="true" type="tns:FOB" />
+  <xs:simpleType name="BrokerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Select" />
+      <xs:enumeration value="Inclusive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BrokerType" nillable="true" type="tns:BrokerType" />
+  <xs:simpleType name="ReasonForExport">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sale" />
+      <xs:enumeration value="IntercompanyData" />
+      <xs:enumeration value="Gift" />
+      <xs:enumeration value="Sample" />
+      <xs:enumeration value="Repair" />
+      <xs:enumeration value="Return" />
+      <xs:enumeration value="PersonalEffects" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReasonForExport" nillable="true" type="tns:ReasonForExport" />
+  <xs:simpleType name="ConsigneeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Consumer" />
+      <xs:enumeration value="Reseller" />
+      <xs:enumeration value="Government" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConsigneeType" nillable="true" type="tns:ConsigneeType" />
+  <xs:simpleType name="EEIFilingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Exempt" />
+      <xs:enumeration value="ShipperPredeparture" />
+      <xs:enumeration value="ShipperPostdeparture" />
+      <xs:enumeration value="UPSPredeparture" />
+      <xs:enumeration value="FedExPrintAndFax" />
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="SummaryReporting" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EEIFilingType" nillable="true" type="tns:EEIFilingType" />
+  <xs:simpleType name="OriginType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CreatedByUser" />
+      <xs:enumeration value="SourceBased" />
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="AutoPacked" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OriginType" nillable="true" type="tns:OriginType" />
+  <xs:simpleType name="AlcoholCustomerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Consumer" />
+      <xs:enumeration value="Licensee" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AlcoholCustomerType" nillable="true" type="tns:AlcoholCustomerType" />
+  <xs:simpleType name="NotificationFormatType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HTML" />
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Wireless" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NotificationFormatType" nillable="true" type="tns:NotificationFormatType" />
+  <xs:simpleType name="RecipientType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Sender" />
+      <xs:enumeration value="Recipient" />
+      <xs:enumeration value="Importer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RecipientType" nillable="true" type="tns:RecipientType" />
+  <xs:simpleType name="DeliveryConfirmationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoSignatureRequired" />
+      <xs:enumeration value="SignatureRequired" />
+      <xs:enumeration value="AdultSignatureRequired" />
+      <xs:enumeration value="DirectSignatureRequired" />
+      <xs:enumeration value="InDirectSignatureRequired" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeliveryConfirmationType" nillable="true" type="tns:DeliveryConfirmationType" />
+  <xs:simpleType name="RegulationSetEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CFR49" />
+      <xs:enumeration value="IATA" />
+      <xs:enumeration value="TDG" />
+      <xs:enumeration value="Both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RegulationSetEnum" nillable="true" type="tns:RegulationSetEnum" />
+  <xs:simpleType name="LiveAnimalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="General" />
+      <xs:enumeration value="Poultry" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LiveAnimalType" nillable="true" type="tns:LiveAnimalType" />
+  <xs:simpleType name="NonstandardPackagingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Large" />
+      <xs:enumeration value="Oversized" />
+      <xs:enumeration value="Irregular" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NonstandardPackagingType" nillable="true" type="tns:NonstandardPackagingType" />
+  <xs:simpleType name="CODTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GuranteedFunds" />
+      <xs:enumeration value="Any" />
+      <xs:enumeration value="Cash" />
+      <xs:enumeration value="CompanyCheck" />
+      <xs:enumeration value="CashiersCheck" />
+      <xs:enumeration value="MoneyOrder" />
+      <xs:enumeration value="CertifiedCheck" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CODTypeEnum" nillable="true" type="tns:CODTypeEnum" />
+  <xs:simpleType name="ReturnReceiptType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Mail" />
+      <xs:enumeration value="Email" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReturnReceiptType" nillable="true" type="tns:ReturnReceiptType" />
+  <xs:simpleType name="SignatureOptionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Adult" />
+      <xs:enumeration value="Direct" />
+      <xs:enumeration value="Indirect" />
+      <xs:enumeration value="NoSignature" />
+      <xs:enumeration value="ServiceDefault" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SignatureOptionType" nillable="true" type="tns:SignatureOptionType" />
+  <xs:simpleType name="WeightType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Calculated" />
+      <xs:enumeration value="UserDefined" />
+      <xs:enumeration value="SetByScenario" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WeightType" nillable="true" type="tns:WeightType" />
+  <xs:simpleType name="RateMethodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PackageRates" />
+      <xs:enumeration value="MetroRates" />
+      <xs:enumeration value="ShipmentWeight" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RateMethodType" nillable="true" type="tns:RateMethodType" />
+  <xs:simpleType name="QuoteLocationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Business" />
+      <xs:enumeration value="Residence" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QuoteLocationType" nillable="true" type="tns:QuoteLocationType" />
+  <xs:simpleType name="DistributionMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ApplyToWholeShipment" />
+      <xs:enumeration value="ApplyTofirstPack" />
+      <xs:enumeration value="ApplyToLastPack" />
+      <xs:enumeration value="DivideBetweenPacks" />
+      <xs:enumeration value="ByPackage" />
+      <xs:enumeration value="ToEachPackage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DistributionMode" nillable="true" type="tns:DistributionMode" />
+  <xs:simpleType name="EndorsementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AddressCorrection" />
+      <xs:enumeration value="CarrierLeaveIfNoResponse" />
+      <xs:enumeration value="ChangeService" />
+      <xs:enumeration value="ForwardingService" />
+      <xs:enumeration value="ReturnService" />
+      <xs:enumeration value="NoServiceSelected" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EndorsementType" nillable="true" type="tns:EndorsementType" />
+  <xs:simpleType name="FeeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FlatFee" />
+      <xs:enumeration value="Percentage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FeeType" nillable="true" type="tns:FeeType" />
+  <xs:simpleType name="TransportationModeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="Ground" />
+      <xs:enumeration value="AirAll" />
+      <xs:enumeration value="AirCargoOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransportationModeEnum" nillable="true" type="tns:TransportationModeEnum" />
+  <xs:simpleType name="USPSHolidayDeliveryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Holiday" />
+      <xs:enumeration value="Sunday" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="USPSHolidayDeliveryType" nillable="true" type="tns:USPSHolidayDeliveryType" />
+  <xs:simpleType name="CustomDeliveryWindowType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="On" />
+      <xs:enumeration value="Before" />
+      <xs:enumeration value="Between" />
+      <xs:enumeration value="After" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomDeliveryWindowType" nillable="true" type="tns:CustomDeliveryWindowType" />
+  <xs:simpleType name="DeliveryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Appointment" />
+      <xs:enumeration value="DateCertain" />
+      <xs:enumeration value="Evening" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeliveryType" nillable="true" type="tns:DeliveryType" />
+  <xs:simpleType name="IndiciaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MediaMail" />
+      <xs:enumeration value="ParcelReturn" />
+      <xs:enumeration value="ParcelSelect" />
+      <xs:enumeration value="PresortedBoundPrintedMatter" />
+      <xs:enumeration value="PresortedStandard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IndiciaType" nillable="true" type="tns:IndiciaType" />
+  <xs:simpleType name="InsideDeliveryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GroundFloor" />
+      <xs:enumeration value="NotGroundFloor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InsideDeliveryType" nillable="true" type="tns:InsideDeliveryType" />
+  <xs:simpleType name="InsuranceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Declaredvalue" />
+      <xs:enumeration value="ShipperDeclaredvalue" />
+      <xs:enumeration value="ExpandedParcel" />
+      <xs:enumeration value="FlexibleParcel" />
+      <xs:enumeration value="TimeInTransit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InsuranceType" nillable="true" type="tns:InsuranceType" />
+  <xs:simpleType name="DiscountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ByDiscount" />
+      <xs:enumeration value="ByUnits" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DiscountType" nillable="true" type="tns:DiscountType" />
+  <xs:simpleType name="OverLengthType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="from12to20" />
+      <xs:enumeration value="from20to28" />
+      <xs:enumeration value="from8to12" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OverLengthType" nillable="true" type="tns:OverLengthType" />
+  <xs:simpleType name="LimitedAccessType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Church" />
+      <xs:enumeration value="Military" />
+      <xs:enumeration value="School" />
+      <xs:enumeration value="Storage" />
+      <xs:enumeration value="Mines" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LimitedAccessType" nillable="true" type="tns:LimitedAccessType" />
+  <xs:simpleType name="PriceCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CF" />
+      <xs:enumeration value="CWT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PriceCode" nillable="true" type="tns:PriceCode" />
+  <xs:simpleType name="UPSRestrictedArticleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Seeds" />
+      <xs:enumeration value="Perishables" />
+      <xs:enumeration value="Tobacco" />
+      <xs:enumeration value="Plants" />
+      <xs:enumeration value="AlcoholicBeverages" />
+      <xs:enumeration value="BiologicalSubstances" />
+      <xs:enumeration value="SpecialExceptions" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UPSRestrictedArticleType" nillable="true" type="tns:UPSRestrictedArticleType" />
+  <xs:simpleType name="ReturnType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PrintReturnLabel" />
+      <xs:enumeration value="EmailLabel" />
+      <xs:enumeration value="OneAttempt" />
+      <xs:enumeration value="ThreeAttempts" />
+      <xs:enumeration value="UPSPrintsAndMails" />
+      <xs:enumeration value="Tag" />
+      <xs:enumeration value="AutoCallTag" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Electronic" />
+      <xs:enumeration value="PayOnUse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReturnType" nillable="true" type="tns:ReturnType" />
+  <xs:simpleType name="SortAndSegregateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OnPickup" />
+      <xs:enumeration value="OnDelivery" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortAndSegregateType" nillable="true" type="tns:SortAndSegregateType" />
+  <xs:simpleType name="DocumentFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PDF" />
+      <xs:enumeration value="TXT" />
+      <xs:enumeration value="PNG" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocumentFormat" nillable="true" type="tns:DocumentFormat" />
+  <xs:simpleType name="CarrierInterfacesFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="IncludeSelected" />
+      <xs:enumeration value="ExcludeSelected" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarrierInterfacesFilterType" nillable="true" type="tns:CarrierInterfacesFilterType" />
+  <xs:simpleType name="CarrierFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="ParcelOnly" />
+      <xs:enumeration value="FreightOnly" />
+      <xs:enumeration value="Include" />
+      <xs:enumeration value="Exclude" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarrierFilterType" nillable="true" type="tns:CarrierFilterType" />
+  <xs:simpleType name="PriceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="List" />
+      <xs:enumeration value="Custom" />
+      <xs:enumeration value="Applied" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PriceType" nillable="true" type="tns:PriceType" />
+  <xs:simpleType name="RateSelectMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Current" />
+      <xs:enumeration value="Cheapest" />
+      <xs:enumeration value="Fastest" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RateSelectMethod" nillable="true" type="tns:RateSelectMethod" />
+  <xs:simpleType name="SortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrder" nillable="true" type="tns:SortOrder" />
+  <xs:simpleType name="SortType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Price" />
+      <xs:enumeration value="DeliveryDate" />
+      <xs:enumeration value="CarrierName" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortType" nillable="true" type="tns:SortType" />
+</xs:schema>

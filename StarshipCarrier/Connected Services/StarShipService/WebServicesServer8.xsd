@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.ShipViaScenarioAPI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.ShipViaScenarioAPI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd2" namespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" />
+  <xs:complexType name="ArrayOfExclusionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExclusionData" nillable="true" type="tns:ExclusionData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExclusionData" nillable="true" type="tns:ArrayOfExclusionData" />
+  <xs:complexType name="ExclusionData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q1:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Days" type="xs:int" />
+          <xs:element minOccurs="0" name="DeliveryTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxBilledWeight" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaxZone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MinZone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriceLimit" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PriceType" type="xs:int" />
+          <xs:element minOccurs="0" name="PriceTypeEnum" type="tns:PriceType" />
+          <xs:element minOccurs="0" name="ShipVia" nillable="true" type="tns:ShipViaData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExclusionData" nillable="true" type="tns:ExclusionData" />
+  <xs:simpleType name="PriceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="List" />
+      <xs:enumeration value="Custom" />
+      <xs:enumeration value="Applied" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PriceType" nillable="true" type="tns:PriceType" />
+  <xs:complexType name="ShipViaData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q2:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CarrierInterfaceID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCAC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ShipViaData" nillable="true" type="tns:ShipViaData" />
+  <xs:complexType name="RateShopFilterData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q3:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarrierFilterType" type="tns:CarrierFilterType" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HasShipViaFilters" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PriceType" type="tns:PriceType" />
+          <xs:element minOccurs="0" name="ShipViaList" nillable="true" type="tns:ArrayOfShipViaData" />
+          <xs:element minOccurs="0" name="SortOrder" type="tns:SortOrder" />
+          <xs:element minOccurs="0" name="SortType" type="tns:SortType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RateShopFilterData" nillable="true" type="tns:RateShopFilterData" />
+  <xs:simpleType name="CarrierFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="AllParcel" />
+      <xs:enumeration value="AllFreight" />
+      <xs:enumeration value="IncludeSelected" />
+      <xs:enumeration value="ExcludeSelected" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarrierFilterType" nillable="true" type="tns:CarrierFilterType" />
+  <xs:complexType name="ArrayOfShipViaData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShipViaData" nillable="true" type="tns:ShipViaData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShipViaData" nillable="true" type="tns:ArrayOfShipViaData" />
+  <xs:simpleType name="SortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrder" nillable="true" type="tns:SortOrder" />
+  <xs:simpleType name="SortType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="Price" />
+      <xs:enumeration value="DeliveryDate" />
+      <xs:enumeration value="CarrierName" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortType" nillable="true" type="tns:SortType" />
+  <xs:complexType name="ArrayOfShipViaSelectData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShipViaSelectData" nillable="true" type="tns:ShipViaSelectData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShipViaSelectData" nillable="true" type="tns:ArrayOfShipViaSelectData" />
+  <xs:complexType name="ShipViaSelectData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q4:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Days" type="xs:int" />
+          <xs:element minOccurs="0" name="DeliveryTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxBilledWeight" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaxZone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MinZone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriceLimit" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PriceType" type="xs:int" />
+          <xs:element minOccurs="0" name="PriceTypeEnum" type="tns:PriceType" />
+          <xs:element minOccurs="0" name="ShipVia" nillable="true" type="tns:ShipViaData" />
+          <xs:element minOccurs="0" name="ShipViaID" type="xs:int" />
+          <xs:element minOccurs="0" name="ShipViaScenarioID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ShipViaSelectData" nillable="true" type="tns:ShipViaSelectData" />
+</xs:schema>

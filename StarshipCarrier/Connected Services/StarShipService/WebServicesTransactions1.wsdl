@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.vtechnologies.com/2011/11/StarShip/WebServices" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebServicesTransactions" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices" location="http://imc-sts:3315/WebServicesServer?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_ICarrierTransactions" type="i0:ICarrierTransactions">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAvailableServices">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/GetAvailableServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Rate">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/Rate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateShop">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateSourceDocument">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateSourceDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateShopSourceDocument">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateShopSourceDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyRate">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ApplyRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddress">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ValidateAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateShipment">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ValidateShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IDataTransactions" type="i0:IDataTransactions">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBroker">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetBroker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBrokers">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadBrokers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImporter">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetImporter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadImporters">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadImporters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThirdParty">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetThirdParty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadThirdParties">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadThirdParties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCompanyInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCustomers">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierDetails">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCarrierDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCarriers">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadCarriers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadHazMatProfiles">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadHazMatProfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHazMatProfile">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetHazMatProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadInventoryItems">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadInventoryItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInventoryItem">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetInventoryItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPackagings">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadPackagings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackaging">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetPackaging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadLocations">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadShipViaScenarios">
+      <soap:operation soapAction="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadShipViaScenarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServicesTransactions">
+    <wsdl:port name="BasicHttpBinding_ICarrierTransactions" binding="tns:BasicHttpBinding_ICarrierTransactions">
+      <soap:address location="http://imc-sts:3315/WebServicesServer/Carrier" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IDataTransactions" binding="tns:BasicHttpBinding_IDataTransactions">
+      <soap:address location="http://imc-sts:3315/WebServicesServer/Data" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

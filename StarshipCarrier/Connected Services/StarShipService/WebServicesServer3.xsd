@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VTechnologies.SourceShared.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VTechnologies.SourceShared.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd2" namespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" />
+  <xs:complexType name="SourceCompany">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q1:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DBConnections" nillable="true" type="tns:ArrayOfDBConnection" />
+          <xs:element minOccurs="0" name="DispatchingStrategy" type="xs:int" />
+          <xs:element minOccurs="0" name="DllAgentNames" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtensionCompanyNames" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtensionSourceID" type="xs:int" />
+          <xs:element minOccurs="0" name="FreightInterfaceID" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxNumberOfConnections" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceID" type="xs:int" />
+          <xs:element minOccurs="0" name="SourceInterfaceID" type="xs:int" />
+          <xs:element minOccurs="0" name="eCommerceCompanyName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SourceCompany" nillable="true" type="tns:SourceCompany" />
+  <xs:complexType name="ArrayOfDBConnection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBConnection" nillable="true" type="tns:DBConnection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBConnection" nillable="true" type="tns:ArrayOfDBConnection" />
+  <xs:complexType name="DBConnection">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q2:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DBName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DBServer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ExtensionSourceID" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Provider" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Settings" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseTrustedConnection" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DBConnection" nillable="true" type="tns:DBConnection" />
+  <xs:complexType name="SI_DocumentInterface">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q3:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalWritebackSettings" nillable="true" type="tns:ArrayOfSI_AdditionalWriteBackSetting" />
+          <xs:element minOccurs="0" name="DocumentInterfaceID" type="xs:int" />
+          <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtensionFSIID" type="xs:int" />
+          <xs:element minOccurs="0" name="ExtensionItemsMergeMap" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldMappings" nillable="true" type="tns:ArrayOfSI_FieldMapping" />
+          <xs:element minOccurs="0" name="FreightWriteBackSettings" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="NotesEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NotesIn9XFormat" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NotesWritebackSettings" nillable="true" type="tns:ArrayOfSI_NotesWriteBackSetting" />
+          <xs:element minOccurs="0" name="ParcelNotesEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SourceID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SI_DocumentInterface" nillable="true" type="tns:SI_DocumentInterface" />
+  <xs:complexType name="ArrayOfSI_AdditionalWriteBackSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SI_AdditionalWriteBackSetting" nillable="true" type="tns:SI_AdditionalWriteBackSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSI_AdditionalWriteBackSetting" nillable="true" type="tns:ArrayOfSI_AdditionalWriteBackSetting" />
+  <xs:complexType name="SI_AdditionalWriteBackSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q4:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Event" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="SettingName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SettingValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SI_AdditionalWriteBackSetting" nillable="true" type="tns:SI_AdditionalWriteBackSetting" />
+  <xs:complexType name="SourceInterface">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q5:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentInterfaces" nillable="true" type="tns:ArrayOfSI_DocumentInterface" />
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SourceInterface" nillable="true" type="tns:SourceInterface" />
+  <xs:complexType name="ArrayOfSI_DocumentInterface">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SI_DocumentInterface" nillable="true" type="tns:SI_DocumentInterface" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSI_DocumentInterface" nillable="true" type="tns:ArrayOfSI_DocumentInterface" />
+  <xs:simpleType name="SourceSearchOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="soEquals" />
+      <xs:enumeration value="soNotEqual" />
+      <xs:enumeration value="soGreaterThan" />
+      <xs:enumeration value="soLessThan" />
+      <xs:enumeration value="soGreaterEqual" />
+      <xs:enumeration value="soLessEqual" />
+      <xs:enumeration value="soBeginsWith" />
+      <xs:enumeration value="soContains" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SourceSearchOperator" nillable="true" type="tns:SourceSearchOperator" />
+  <xs:complexType name="ArrayOfSI_FieldMapping">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SI_FieldMapping" nillable="true" type="tns:SI_FieldMapping" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSI_FieldMapping" nillable="true" type="tns:ArrayOfSI_FieldMapping" />
+  <xs:complexType name="SI_FieldMapping">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q6:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EventType" type="tns:FieldWriteBackEventType" />
+          <xs:element minOccurs="0" name="FieldMapID" type="xs:int" />
+          <xs:element minOccurs="0" name="FieldMapTarget" type="xs:int" />
+          <xs:element minOccurs="0" name="HasValueList" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Locked" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MapType" type="tns:FieldMapType" />
+          <xs:element minOccurs="0" name="StarShipFieldID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StarShipGUIItemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TargetValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueTranslations" nillable="true" type="tns:ArrayOfSI_ValueTranslation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SI_FieldMapping" nillable="true" type="tns:SI_FieldMapping" />
+  <xs:simpleType name="FieldWriteBackEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Rate" />
+      <xs:enumeration value="Ship" />
+      <xs:enumeration value="Both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FieldWriteBackEventType" nillable="true" type="tns:FieldWriteBackEventType" />
+  <xs:simpleType name="FieldMapType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Read" />
+      <xs:enumeration value="Write" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FieldMapType" nillable="true" type="tns:FieldMapType" />
+  <xs:complexType name="ArrayOfSI_ValueTranslation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SI_ValueTranslation" nillable="true" type="tns:SI_ValueTranslation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSI_ValueTranslation" nillable="true" type="tns:ArrayOfSI_ValueTranslation" />
+  <xs:complexType name="SI_ValueTranslation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q7:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FSIFieldValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldMapID" type="xs:int" />
+          <xs:element minOccurs="0" name="StarShipFieldValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SI_ValueTranslation" nillable="true" type="tns:SI_ValueTranslation" />
+  <xs:complexType name="ArrayOfSI_NotesWriteBackSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SI_NotesWriteBackSetting" nillable="true" type="tns:SI_NotesWriteBackSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSI_NotesWriteBackSetting" nillable="true" type="tns:ArrayOfSI_NotesWriteBackSetting" />
+  <xs:complexType name="SI_NotesWriteBackSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q8:DataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarrierType" type="xs:int" />
+          <xs:element minOccurs="0" name="StarShipGUIItemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SI_NotesWriteBackSetting" nillable="true" type="tns:SI_NotesWriteBackSetting" />
+</xs:schema>

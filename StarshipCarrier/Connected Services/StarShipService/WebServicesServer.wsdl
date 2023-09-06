@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.vtechnologies.com/2011/11/StarShip/WebServices" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Imports">
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd0" namespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd2" namespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/VTechnologies.SourceShared.Model" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.FreightRules" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.ShipViaScenarioAPI" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServices.Model.Source" />
+      <xsd:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICarrierTransactions_GetAvailableServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableServices" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_GetAvailableServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_Rate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Rate" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_Rate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_RateShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateShop" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_RateShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_RateSourceDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateSourceDocument" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_RateSourceDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateSourceDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_RateShopSourceDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateShopSourceDocument" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_RateShopSourceDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateShopSourceDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_ApplyRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyRate" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_ApplyRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_ValidateAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_ValidateAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_ValidateShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateShipment" />
+  </wsdl:message>
+  <wsdl:message name="ICarrierTransactions_ValidateShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetBroker_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBroker" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetBroker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrokerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadBrokers_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadBrokers" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadBrokers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadBrokersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetImporter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImporter" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetImporter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImporterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadImporters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadImporters" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadImporters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadImportersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetThirdParty_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThirdParty" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetThirdParty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThirdPartyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadThirdParties_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadThirdParties" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadThirdParties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadThirdPartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetCompanyInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetCompanyInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetCarrierDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarrierDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetCarrierDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarrierDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadCarriers_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCarriers" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadCarriers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCarriersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadHazMatProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadHazMatProfiles" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadHazMatProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadHazMatProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetHazMatProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHazMatProfile" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetHazMatProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHazMatProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadInventoryItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadInventoryItems" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadInventoryItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadInventoryItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetInventoryItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInventoryItem" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetInventoryItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInventoryItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadPackagings_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadPackagings" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadPackagings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadPackagingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetPackaging_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackaging" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetPackaging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_GetCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadLocations" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadShipViaScenarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadShipViaScenarios" />
+  </wsdl:message>
+  <wsdl:message name="IDataTransactions_LoadShipViaScenarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadShipViaScenariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManagedTransactions_AddValueTranslations_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddValueTranslations" />
+  </wsdl:message>
+  <wsdl:message name="IManagedTransactions_AddValueTranslations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddValueTranslationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManagedTransactions_GetSettingsGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettingsGroup" />
+  </wsdl:message>
+  <wsdl:message name="IManagedTransactions_GetSettingsGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettingsGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManagedTransactions_ConvertToSourceDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertToSourceDocument" />
+  </wsdl:message>
+  <wsdl:message name="IManagedTransactions_ConvertToSourceDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertToSourceDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManagedTransactions_ConvertToApiShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertToApiShipment" />
+  </wsdl:message>
+  <wsdl:message name="IManagedTransactions_ConvertToApiShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertToApiShipmentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICarrierTransactions">
+    <wsdl:operation name="GetAvailableServices">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/GetAvailableServices" message="tns:ICarrierTransactions_GetAvailableServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/GetAvailableServicesResponse" message="tns:ICarrierTransactions_GetAvailableServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Rate">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/Rate" message="tns:ICarrierTransactions_Rate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateResponse" message="tns:ICarrierTransactions_Rate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateShop">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateShop" message="tns:ICarrierTransactions_RateShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateShopResponse" message="tns:ICarrierTransactions_RateShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateSourceDocument">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateSourceDocument" message="tns:ICarrierTransactions_RateSourceDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateSourceDocumentResponse" message="tns:ICarrierTransactions_RateSourceDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateShopSourceDocument">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateShopSourceDocument" message="tns:ICarrierTransactions_RateShopSourceDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/RateShopSourceDocumentResponse" message="tns:ICarrierTransactions_RateShopSourceDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyRate">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ApplyRate" message="tns:ICarrierTransactions_ApplyRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ApplyRateResponse" message="tns:ICarrierTransactions_ApplyRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddress">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ValidateAddress" message="tns:ICarrierTransactions_ValidateAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ValidateAddressResponse" message="tns:ICarrierTransactions_ValidateAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateShipment">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ValidateShipment" message="tns:ICarrierTransactions_ValidateShipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/ICarrierTransactions/ValidateShipmentResponse" message="tns:ICarrierTransactions_ValidateShipment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDataTransactions">
+    <wsdl:operation name="GetBroker">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetBroker" message="tns:IDataTransactions_GetBroker_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetBrokerResponse" message="tns:IDataTransactions_GetBroker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBrokers">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadBrokers" message="tns:IDataTransactions_LoadBrokers_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadBrokersResponse" message="tns:IDataTransactions_LoadBrokers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImporter">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetImporter" message="tns:IDataTransactions_GetImporter_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetImporterResponse" message="tns:IDataTransactions_GetImporter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadImporters">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadImporters" message="tns:IDataTransactions_LoadImporters_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadImportersResponse" message="tns:IDataTransactions_LoadImporters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThirdParty">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetThirdParty" message="tns:IDataTransactions_GetThirdParty_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetThirdPartyResponse" message="tns:IDataTransactions_GetThirdParty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadThirdParties">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadThirdParties" message="tns:IDataTransactions_LoadThirdParties_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadThirdPartiesResponse" message="tns:IDataTransactions_LoadThirdParties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyInfo">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCompanyInfo" message="tns:IDataTransactions_GetCompanyInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCompanyInfoResponse" message="tns:IDataTransactions_GetCompanyInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCustomers">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadCustomers" message="tns:IDataTransactions_LoadCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadCustomersResponse" message="tns:IDataTransactions_LoadCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCustomer" message="tns:IDataTransactions_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCustomerResponse" message="tns:IDataTransactions_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierDetails">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCarrierDetails" message="tns:IDataTransactions_GetCarrierDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCarrierDetailsResponse" message="tns:IDataTransactions_GetCarrierDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCarriers">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadCarriers" message="tns:IDataTransactions_LoadCarriers_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadCarriersResponse" message="tns:IDataTransactions_LoadCarriers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadHazMatProfiles">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadHazMatProfiles" message="tns:IDataTransactions_LoadHazMatProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadHazMatProfilesResponse" message="tns:IDataTransactions_LoadHazMatProfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHazMatProfile">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetHazMatProfile" message="tns:IDataTransactions_GetHazMatProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetHazMatProfileResponse" message="tns:IDataTransactions_GetHazMatProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadInventoryItems">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadInventoryItems" message="tns:IDataTransactions_LoadInventoryItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadInventoryItemsResponse" message="tns:IDataTransactions_LoadInventoryItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInventoryItem">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetInventoryItem" message="tns:IDataTransactions_GetInventoryItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetInventoryItemResponse" message="tns:IDataTransactions_GetInventoryItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadPackagings">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadPackagings" message="tns:IDataTransactions_LoadPackagings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadPackagingsResponse" message="tns:IDataTransactions_LoadPackagings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackaging">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetPackaging" message="tns:IDataTransactions_GetPackaging_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetPackagingResponse" message="tns:IDataTransactions_GetPackaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCountries" message="tns:IDataTransactions_GetCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/GetCountriesResponse" message="tns:IDataTransactions_GetCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadLocations">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadLocations" message="tns:IDataTransactions_LoadLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadLocationsResponse" message="tns:IDataTransactions_LoadLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadShipViaScenarios">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadShipViaScenarios" message="tns:IDataTransactions_LoadShipViaScenarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IDataTransactions/LoadShipViaScenariosResponse" message="tns:IDataTransactions_LoadShipViaScenarios_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IManagedTransactions">
+    <wsdl:operation name="AddValueTranslations">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IManagedTransactions/AddValueTranslations" message="tns:IManagedTransactions_AddValueTranslations_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IManagedTransactions/AddValueTranslationsResponse" message="tns:IManagedTransactions_AddValueTranslations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSettingsGroup">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IManagedTransactions/GetSettingsGroup" message="tns:IManagedTransactions_GetSettingsGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IManagedTransactions/GetSettingsGroupResponse" message="tns:IManagedTransactions_GetSettingsGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToSourceDocument">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IManagedTransactions/ConvertToSourceDocument" message="tns:IManagedTransactions_ConvertToSourceDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IManagedTransactions/ConvertToSourceDocumentResponse" message="tns:IManagedTransactions_ConvertToSourceDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToApiShipment">
+      <wsdl:input wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IManagedTransactions/ConvertToApiShipment" message="tns:IManagedTransactions_ConvertToApiShipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.vtechnologies.com/2011/11/StarShip/WebServices/IManagedTransactions/ConvertToApiShipmentResponse" message="tns:IManagedTransactions_ConvertToApiShipment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

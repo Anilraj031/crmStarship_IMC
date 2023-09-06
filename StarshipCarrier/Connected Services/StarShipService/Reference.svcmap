@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d1687f8c-0f13-4b96-8110-99f6d2498c30" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.10.18.7:3315/WebServicesServer?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WebServicesServer.xsd" MetadataType="Schema" ID="d77fff56-5c01-4df0-82fa-d7c6078adfbd" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd2" />
+    <MetadataFile FileName="WebServicesServer1.xsd" MetadataType="Schema" ID="8698710e-017e-41d4-968b-297bde104ac3" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd6" />
+    <MetadataFile FileName="WebServicesServer9.xsd" MetadataType="Schema" ID="db508d13-d46e-4059-be28-bd030a551592" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd9" />
+    <MetadataFile FileName="WebServicesServer2.xsd" MetadataType="Schema" ID="6e8ae4d6-29fe-4a35-be58-f2dcf13da68d" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd1" />
+    <MetadataFile FileName="WebServicesServer3.xsd" MetadataType="Schema" ID="4c46518a-e335-4c55-8616-37d67a531648" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd5" />
+    <MetadataFile FileName="WebServicesServer4.xsd" MetadataType="Schema" ID="d4531104-b127-418c-a491-fba4508bf8ea" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd8" />
+    <MetadataFile FileName="WebServicesServer5.xsd" MetadataType="Schema" ID="29c5e714-6e2c-4141-980f-b7491182a0c6" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd0" />
+    <MetadataFile FileName="WebServicesServer6.xsd" MetadataType="Schema" ID="f871e24f-31a4-4264-a9b3-01376c7105f9" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd4" />
+    <MetadataFile FileName="WebServicesServer7.xsd" MetadataType="Schema" ID="0c5e4853-0448-47d2-9f25-892ebd68ec46" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd3" />
+    <MetadataFile FileName="WebServicesServer8.xsd" MetadataType="Schema" ID="481ac0d6-2966-409f-858c-ff97a038b864" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?xsd=xsd7" />
+    <MetadataFile FileName="WebServicesTransactions1.wsdl" MetadataType="Wsdl" ID="49706106-22fa-4d5b-8101-011a144c675c" SourceId="1" SourceUrl="http://10.10.18.7:3315/WebServicesServer?WSDL" />
+    <MetadataFile FileName="WebServicesServer.wsdl" MetadataType="Wsdl" ID="50b31e70-9c1a-4626-934d-75f7dc142ee7" SourceId="1" SourceUrl="http://imc-sts:3315/WebServicesServer?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd2" namespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" />
+  <xs:complexType name="AddValueTranslationsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceFieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+          <xs:element minOccurs="0" name="values" nillable="true" type="q1:ArrayOfValueTranslationPair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddValueTranslationsRequest" nillable="true" type="tns:AddValueTranslationsRequest" />
+  <xs:complexType name="AddValueTranslationsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q2:Response">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddValueTranslationsResponse" nillable="true" type="tns:AddValueTranslationsResponse" />
+  <xs:complexType name="GetSettingsGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q3:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SettingGroup" type="tns:SettingGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSettingsGroupRequest" nillable="true" type="tns:GetSettingsGroupRequest" />
+  <xs:simpleType name="SettingGroup">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="StarShipRateQuote" />
+      <xs:enumeration value="FSISetup_47" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SettingGroup" nillable="true" type="tns:SettingGroup" />
+  <xs:complexType name="GetSettingsGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q4:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Settings" nillable="true" type="q4:ArrayOfSetting" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSettingsGroupResponse" nillable="true" type="tns:GetSettingsGroupResponse" />
+  <xs:complexType name="ConvertToSourceDocumentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q5:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApiShipment" nillable="true" type="q5:Shipment" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConvertToSourceDocumentRequest" nillable="true" type="tns:ConvertToSourceDocumentRequest" />
+  <xs:complexType name="ConvertToSourceDocumentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q6:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SourceDocument" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConvertToSourceDocumentResponse" nillable="true" type="tns:ConvertToSourceDocumentResponse" />
+  <xs:complexType name="ConvertToApiShipmentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q7:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SourceDocument" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConvertToApiShipmentRequest" nillable="true" type="tns:ConvertToApiShipmentRequest" />
+  <xs:complexType name="ConvertToApiShipmentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" base="q8:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApiShipment" nillable="true" type="q8:Shipment" />
+          <xs:element minOccurs="0" name="DefaultPack" nillable="true" type="q8:Pack" />
+          <xs:element minOccurs="0" name="DefaultPallet" nillable="true" type="q8:Pallet" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConvertToApiShipmentResponse" nillable="true" type="tns:ConvertToApiShipmentResponse" />
+</xs:schema>

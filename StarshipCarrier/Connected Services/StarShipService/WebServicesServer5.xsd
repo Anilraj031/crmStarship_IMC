@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.vtechnologies.com/2011/11/StarShip/WebServices" elementFormDefault="qualified" targetNamespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd2" namespace="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" />
+  <xs:import schemaLocation="http://imc-sts:3315/WebServicesServer?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" />
+  <xs:element name="GetAvailableServices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q1:GetAvailableServicesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableServicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetAvailableServicesResult" nillable="true" type="q2:GetAvailableServicesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q3:RateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="RateResult" nillable="true" type="q4:RateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RateShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q5:RateShopRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RateShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="RateShopResult" nillable="true" type="q6:RateShopResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RateSourceDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q7:RateSourceDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RateSourceDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="RateSourceDocumentResult" nillable="true" type="q8:RateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RateShopSourceDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q9:RateShopSourceDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RateShopSourceDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="RateShopSourceDocumentResult" nillable="true" type="q10:RateShopResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyRate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q11:ApplyRateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="ApplyRateResult" nillable="true" type="q12:ApplyRateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pReqeust" type="q13:ValidateAddressRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="ValidateAddressResult" nillable="true" type="q14:ValidateAddressResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pReqeust" type="q15:ValidateShipmentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="ValidateShipmentResult" nillable="true" type="q16:ValidateShipmentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBroker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q17:GetPartyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBrokerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetBrokerResult" nillable="true" type="q18:GetPartyResponseForTypeBroker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadBrokers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q19:LoadPartiesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadBrokersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadBrokersResult" nillable="true" type="q20:LoadPartiesResponseForTypeBroker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImporter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q21:GetPartyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImporterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetImporterResult" nillable="true" type="q22:GetPartyResponseForTypeImporter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadImporters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q23:LoadPartiesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadImportersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadImportersResult" nillable="true" type="q24:LoadPartiesResponseForTypeImporter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThirdParty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q25:GetPartyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThirdPartyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetThirdPartyResult" nillable="true" type="q26:GetPartyResponseForTypeThirdParty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadThirdParties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q27:LoadPartiesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadThirdPartiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadThirdPartiesResult" nillable="true" type="q28:LoadPartiesResponseForTypeThirdParty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q29:GetCompanyInfoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetCompanyInfoResult" nillable="true" type="q30:GetCompanyInfoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadCustomers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q31:LoadCustomersRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadCustomersResult" nillable="true" type="q32:LoadCustomersResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q33:GetCustomerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetCustomerResult" nillable="true" type="q34:GetCustomerResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarrierDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q35:GetCarrierDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarrierDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetCarrierDetailsResult" nillable="true" type="q36:GetCarrierDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadCarriers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q37:LoadCarriersRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadCarriersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadCarriersResult" nillable="true" type="q38:LoadCarriersResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadHazMatProfiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q39:LoadHazMatProfilesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadHazMatProfilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadHazMatProfilesResult" nillable="true" type="q40:LoadHazMatProfilesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHazMatProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q41:GetHazMatProfileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHazMatProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetHazMatProfileResult" nillable="true" type="q42:GetHazMatProfileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadInventoryItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q43:LoadInventoryItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadInventoryItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadInventoryItemsResult" nillable="true" type="q44:LoadInventoryItemsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInventoryItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q45:GetInventoryItemRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInventoryItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetInventoryItemResult" nillable="true" type="q46:GetInventoryItemResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadPackagings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q47:LoadPackagingsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadPackagingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadPackagingsResult" nillable="true" type="q48:LoadPackagingsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q49:GetPackagingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetPackagingResult" nillable="true" type="q50:GetPackagingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q51:GetCountriesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="GetCountriesResult" nillable="true" type="q52:GetCountriesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadLocations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q53:LoadLocationsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadLocationsResult" nillable="true" type="q54:LoadLocationsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadShipViaScenarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="1" name="pRequest" type="q55:LoadShipViaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadShipViaScenariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://www.vtechnologies.com/2011/11/StarShip/WebServices/Model" minOccurs="0" name="LoadShipViaScenariosResult" nillable="true" type="q56:LoadShipViaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddValueTranslations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" minOccurs="1" name="pRequest" type="q57:AddValueTranslationsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddValueTranslationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" minOccurs="0" name="AddValueTranslationsResult" nillable="true" type="q58:AddValueTranslationsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSettingsGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" minOccurs="1" name="pRequest" type="q59:GetSettingsGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSettingsGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" minOccurs="0" name="GetSettingsGroupResult" nillable="true" type="q60:GetSettingsGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertToSourceDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" minOccurs="1" name="pRequest" type="q61:ConvertToSourceDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertToSourceDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" minOccurs="0" name="ConvertToSourceDocumentResult" nillable="true" type="q62:ConvertToSourceDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertToApiShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" minOccurs="1" name="pRequest" type="q63:ConvertToApiShipmentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertToApiShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/VTechnologies.StarShip.WebServicesServer.Managed.Model" minOccurs="0" name="ConvertToApiShipmentResult" nillable="true" type="q64:ConvertToApiShipmentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
